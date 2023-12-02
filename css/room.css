@@ -1,0 +1,600 @@
+/* fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400&family=Pacifico&family=Roboto+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Arvo:ital,wght@0,400;0,700;1,400&family=Lobster&family=Oswald:wght@500&family=Pacifico&family=Roboto+Condensed:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+:root {
+    --primery-color: #eeeeee;
+    --nav-back: #fff;
+    --nav-links: #cac9c9;
+    --nav-border: #514b4b;
+    --nav-hover-color: #ccb13a;
+    --nav-hover-border: #6e6565;
+    --light: #353535;
+    --toggle-nav-back: #0d0d0dc4;
+    --toggle-button-click: #3a3838;
+}
+
+.dark-mode {
+    --primery-color: #0f0e0f;
+    --nav-back: #242226;
+    --nav-links: #313131;
+    --nav-border: #514b4b;
+    --nav-hover-color: #4e4e4e;
+    --nav-hover-border: #6e6565;
+    --light: #ffffff;
+    --toggle-nav-back: #0d0d0dc4;
+    --toggle-button-click: #3a3838;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: var(--primery-color);
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background: var(--primery-color);
+    overflow: hidden;
+}
+
+.container .navigation {
+    width: 100%;
+    height: 60px;
+    background-color: var(--nav-back);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .navigation .logo {
+    margin-left: 30px;
+}
+
+.container .navigation .logo b a {
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
+    color: var(--light);
+    text-decoration: none;
+}
+
+.container .navigation .links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 20px;
+}
+
+.container .navigation .links ul {
+    display: flex;
+}
+
+.container .navigation .links ul li {
+    display: flex;
+    margin: 0 15px;
+}
+
+.container .navigation .links ul li a {
+    padding: 8px 16px;
+    background-color: var(--nav-links);
+    color: var(--light);
+    text-decoration: none;
+    border: 1px solid var(--nav-border);
+    border-radius: 5px;
+}
+
+.container .navigation .links ul li a:hover {
+    background-color: var(--nav-hover-color);
+    border: 1px solid var(--nav-hover-border);
+}
+
+.container .navigation .links ul li .active {
+    background-color: var(--nav-hover-color);
+    border: 1px solid var(--nav-hover-border);
+}
+
+.container .navigation .links .darkModeFuture {
+    display: flex;
+}
+
+.container .navigation .links .darkModeFuture i {
+    margin-right: 10px;
+    font-size: 20px;
+    color: var(--light);
+    cursor: pointer;
+}
+
+/* toggle button  */
+
+.container .navigation .toggleButton {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.container .navigation .toggleButton i {
+    color: var(--toggle-button-click);
+}
+
+/* main toggle nav bar  */
+.container .navigation .toggleLinks {
+    position: absolute;
+    top: 0;
+    left: 110%;
+    width: 100%;
+    height: 100%;
+    background: var(--toggle-nav-back);
+    transition: 0.5s ease-in;
+    z-index: 100;
+}
+
+.container .navigation .toggleLinksShow {
+    left: 0px;
+}
+
+.container .navigation .toggleButton2 {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.container .navigation .toggleButton2 i {
+    margin-right: 10px;
+    color: var(--nav-hover-border);
+    cursor: pointer;
+}
+
+.container .navigation .toggleLinks ul {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.container .navigation .toggleLinks ul li {
+    width: 100%;
+}
+
+.container .navigation .toggleLinks ul li a {
+    display: block;
+    width: 100%;
+    background-color: var(--nav-links);
+    color: var(--light);
+    border: 1px solid var(--nav-border);
+    text-decoration: none;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 15px;
+    margin: 5px 0;
+}
+
+.container .navigation .toggleLinks ul li a:hover {
+    background-color: var(--nav-hover-color);
+    border: 1px solid var(--nav-hover-border);
+}
+
+.container .navigation .toggleLinks ul i {
+    display: block;
+    width: 100%;
+    background-color: var(--nav-links);
+    color: var(--light);
+    border: 1px solid var(--nav-border);
+    text-decoration: none;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 15px;
+    text-shadow: 2px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+
+
+/* responsive nav bar */
+
+@media only screen and (max-width: 10000px) {
+
+    .container .navigation .toggleButton {
+        display: none;
+    }
+
+    .container .navigation .toggleLinks {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .container .navigation {
+        height: 50px;
+    }
+
+    .container .navigation .logo b a {
+        font-size: 25px;
+    }
+
+    .container .navigation .links ul li a {
+        padding: 5px 10px;
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container .navigation .links {
+        display: none;
+    }
+
+    .container .navigation {
+        height: 40px;
+    }
+
+    .container .navigation .logo b a {
+        font-size: 20px;
+    }
+
+    .container .navigation .logo {
+        margin-left: 15px;
+    }
+
+    .container .navigation .toggleButton {
+        display: inline;
+    }
+
+    .container .navigation .toggleLinks {
+        display: inline;
+    }
+}
+/* message box  */
+.container .message-box {
+    position: relative;
+    top: 0px;
+    left: -100%;
+    width: 99%;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    border: 1px solid var(--light);
+    box-shadow: -2px 2px 3px 1px var(--light);
+    margin-bottom: -50px;
+}
+.container .message-show {
+    left: 0;
+}
+
+.container .message-box .massagebox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.danger{
+    background: #f23939;
+}
+.primery {
+    background: #4cde17;
+}
+.container .message-box .massagebox .details {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .message-box .massagebox .details span {
+    font-weight: 600;
+    font-size: 17px;
+    margin: 0 2px;
+    color: #ffffff;
+}
+
+.container .message-box .massagebox .closeBtn {
+    height: 100%;
+    width: 60px;
+}
+
+.container .message-box .massagebox .closeBtn button {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.container .message-box .massagebox .closeBtn button i {
+    font-size: 20px;
+}
+
+/* message box responsive  */
+@media only screen and (max-width: 1000px) {
+    .container .message-box{
+        width: 99.5%;
+        height: 50px;
+    }
+    .container .message-box .massagebox .details span{
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .container .message-box{
+        width: 99.5%;
+        height: 50px;
+    }
+    .container .message-box .massagebox .details span{
+        font-size: 15px;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .container .message-box{
+        width: 99.5%;
+        height: 40px;
+        padding: 0;
+    }
+    .container .message-box .massagebox .details span{
+        font-size: 14px;
+    }
+    .container .message-box .massagebox{
+        padding: 0 5px;
+    }
+}
+@media only screen and (max-width: 350px) {
+    .container .message-box{
+        width: 99.5%;
+        height: 35px;
+    }
+    .container .message-box .massagebox .details span{
+        font-size: 12px;
+    }
+    .container .message-box .massagebox{
+        padding: 0 3px;
+    }
+    .container .message-box .massagebox .closeBtn{
+        width: 50px;
+    }
+}
+@media only screen and (max-width: 250px) {
+    .container .message-box .massagebox .closeBtn{
+        width: 40px;
+    }
+}
+/* chating  */
+.container .chating-box {
+    width: 100%;
+    background-color: var(--primery-color);
+    border: 1px solid var(--light);
+    height: 75%;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
+.container .chating-box .heading {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    margin-top: 5px;
+    color: var(--light);
+}
+
+.container .chating-box .info {
+    font-style: italic;
+    font-family: initial;
+    font-weight: 600;
+    padding-left: 5px;
+    padding-top: 10px;
+    color: var(--light);
+    font-size: 20px;
+}
+
+.container .chating-box .chating_is {
+    width: 100%;
+    height: 80%;
+    padding: 10px;
+
+}
+
+.container .chating-box ul {
+    width: 100%;
+    height: 100%;
+}
+
+.container .chating-box ul li {
+    list-style: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+    word-wrap: anywhere;
+}
+
+.container .chating-box ul li .you {
+    font-size: 20px;
+    color: #2a2aa1;
+    font-weight: 600;
+}
+
+.container .chating-box ul li .stranger {
+    font-size: 20px;
+    color: #e42121;
+    font-weight: 600;
+}
+
+.container .chating-box ul li .msg {
+    font-size: 19px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 5px;
+    color: var(--light);
+}
+
+/* chat area */
+.container .chat-area {
+    width: 100%;
+    height: 15%;
+    overflow: hidden;
+    border: 1px solid var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 5px;
+}
+
+.container .chat-area .button1, .button2 {
+    width: 10%;
+    height: 100%;
+    padding: 5px;
+}
+
+.container .chat-area .button1 button {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#4b4bff, #1a1ad6);
+    cursor: pointer;
+}
+
+.container .chat-area .button1 button p {
+    margin: 5px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.container .chat-area .button2 button {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#4b4bff, #1a1ad6);
+    cursor: pointer;
+}
+
+.container .chat-area .button2 button p {
+    margin: 5px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.container .chat-area .textarea {
+    width: 80%;
+    height: 100%;
+    padding: 5px;
+}
+
+.container .chat-area textarea {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    font-size: 15px;
+    resize: none;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .container .chating-box .heading{
+        font-size: 30px;
+    }
+    .container .chating-box .info{
+        font-size: 17px;
+    }
+    .container .chating-box ul li .you , .container .chating-box ul li .stranger{
+        font-size: 18px;
+    }
+    .container .chating-box ul li .msg{
+        font-size: 17px;
+    }
+    .container .chat-area .button1 button p , .container .chat-area .button2 button p{
+        font-size: 13px;
+    }
+    .container .chat-area , .container .chat-area .button1, .button2{
+        padding: 0;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .container .chating-box .heading{
+        font-size: 25px;
+    }
+    .container .chating-box .info{
+        font-size: 15px;
+    }
+    .container .chating-box ul li .you , .container .chating-box ul li .stranger{
+        font-size: 16px;
+    }
+    .container .chating-box ul li .msg{
+        font-size: 16px;
+    }
+    .container .chat-area .button1 button p , .container .chat-area .button2 button p{
+        font-size: 11px;
+    }
+    .container .chat-area textarea{
+        font-size: 12px;
+    }
+    .container .chat-area , .container .chat-area .button1, .button2{
+        padding: 0;
+    }
+    .container .chat-area .textarea{
+        width: 60%;
+    }
+    .container .chat-area .button1, .button2{
+        width: 20%;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .container .chating-box .heading{
+        font-size: 20px;
+    }
+    .container .chating-box .info{
+        font-size: 13px;
+    }
+    .container .chating-box ul li .you , .container .chating-box ul li .stranger{
+        font-size: 14px;
+    }
+    .container .chating-box ul li .msg{
+        font-size: 13px;
+    }
+}
+@media only screen and (max-width: 300px) {
+    .container .chating-box .heading{
+        font-size: 17px;
+    }
+    .container .chat-area .button1 button p , .container .chat-area .button2 button p{
+        font-size: 9px;
+    }
+}
+@media only screen and (max-height: 410px) {
+    .container .chating-box{
+        height: 70%;
+    }
+    .container .chat-area{
+        height: 20%;
+    }
+}
+@media only screen and (max-height: 350px) {
+    .container .chating-box{
+        height: 67%;
+    }
+    .container .chat-area{
+        height: 22%;
+    }
+}
+@media only screen and (max-height: 300px) {
+    .container .chating-box{
+        height: 60%;
+    }
+    .container .chat-area{
+        height: 26%;
+    }
+}
+@media only screen and (max-height: 250px) {
+    .container .chating-box{
+        height: 55%;
+    }
+    .container .chat-area{
+        height: 30%;
+    }
+}
